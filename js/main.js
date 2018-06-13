@@ -12,30 +12,29 @@ function loadScript() {
     myObject = JSON.parse(data);
 
     //01 Project Name and Opening Hours
-    document.querySelector(".project-name").textContent = `${myObject.bar.name}`;
-    // Closing Time
-    document.querySelector(".closing-time").textContent = ` ${myObject.bar.closingTime}`;
-    // Current Time
+    document.querySelector(".project-name").textContent = `Welcome to ${myObject.bar.name}`;
+    //02 Closing Time
+    document.querySelector(".closing-time").textContent = ` ${myObject.bar.closingTime.slice(0, -3)}`;
+    //03 Current Time
     const now = new Date();
     const hours = now.getHours();
     const minutes = now.getMinutes();
     document.querySelector(".current-time").textContent = ` ` + hours + ":" + minutes;
 
-    //02 Call Bartender's Function
-    //call functions
+    //04 Call Bartender's Function
     showBartenders();
 
-    //03 Number of people served
+    //05 Number of people served
 
-    //04 Getting a number of beers served in total
+    //06 Getting a number of beers served in total
 
-    //05. Getting a number of people served now
+    //07 Getting a number of people served now
 
 
 };
 
 
-//02 Bartenders name, status and status detail
+//02 Bartenders name-status-status detail
 function showBartenders() {
     //console.log("bartenders", myObject.bartenders);
     //clean the container of bartenders

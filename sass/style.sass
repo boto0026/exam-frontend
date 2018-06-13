@@ -13,6 +13,10 @@ body
   margin: 1em 0 1em 0
   opacity: 0.5
   background-color: $white
+
+.icon
+  display: none
+
  
 //Main Grid
 .wrapp
@@ -56,12 +60,16 @@ body
   .box4-column1
     display: grid
     grid-column: repeat(2, 1fr)
-    grid-template-rows: minmax(100px, auto)
+    grid-template-rows: minmax(60px, auto)
     padding: 2em
     .bartender-graphic 
+      display: grid
+      height: 30px
+      align-items: center
       width: 100%
-      background-color: pink
+      height: 3.5em
       margin: 0 0 1.5em 0
+      background-color: $gray
   
 .box5
   grid-column: 5 / 9
