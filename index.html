@@ -6,25 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FooBar Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-</head>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
-    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
 </head>
 
 <body>
 
+    <main class="wrapp">
 
-    <main>
-        <!--Foobar Section-->
-        <div class="container-foobar">
-            <h1 class="project-name">Project Name is comming here</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur, ipsum?</p>
-            <div class="line-white"></div>
+        <!-- Project name - Closing Time - Current Time -->
+        <div class="box box1">
+
+            <h1 class="project-name">Project Name</h1>
+            <div class="line"></div>
 
             <span>
                 <i class="far fa-clock"></i> Closing Time:
@@ -34,114 +33,69 @@
                 <i class="fas fa-clock"></i> Current Time:
                 <strong class="current-time"></strong>
             </span>
-            <span class="current-time"></span>
+        </div>
+
+        <!-- Beer taps -->
+        <div class="box box2">
+            <span>Beer Taps</span>
+            <span>1</span>
+        </div>
+
+        <!--Waiting List-->
+        <div class="box box3">
+            <span>Waiting List</span>
+            <span>1</span>
         </div>
 
 
-        <!--Beer Tap Section-->
-        <div class="container-beertap">
-            <h3>Beer Taps</h3>
+        <!-- Bartenders working -->
+        <!-- Template Holder -->
+        <div class="box box4"></div>
 
-        </div>
-
-
-        <!--People Waiting Section-->
-        <div class="container-queue">
-            <h3>People waiting</h3>
-            <h2 class="fas fa-male"></h2>
-            <h2 class="fas fa-male"></h2>
-            <h2 class="fas fa-male"></h2>
-        </div>
-
-
-        <!--People Served-->
-        <div class="container-people-served">
-            <h3>People served now</h3>
-        </div>
-
-
-        <!--People Waiting Section-->
-        <div class="container-beers-served">
-            <div class="wrapp">
-                <h3>Beers served today</h3>
+        <template class="bartendersTemplate">
+            <div>
+                <span>Bartender's name</span>
+                <strong class="bartender_name"></strong>
             </div>
-        </div>
-
-
-
-        <!--Bartenders Section-->
-        <div class="container-bartenders">
-            <div class="bartender-wrapp">
-                <i id="profile" class="fas fa-user-circle"></i>
-                <h3>Bartenders:
-                    <strong class="bartender_name">name</strong>
-                </h3>
-                <div class="line-black"></div>
-                <span class="profile-detail">
-                    <i id="status" class="fas fa-user-times"></i> Working Status:
-                    <strong class="bartender_status"></strong>
-                </span>
-                <span class="profile-detail">
-                    <i id="detail" class="far fa-clock"></i> Working Details:
-                    <strong class="bartender_status_detail"></strong>
-                </span>
+            <div>
+                <span>Status:</span>
+                <strong class="bartender_status"></strong>
             </div>
-        </div>
-
-        <!--Bartenders Section-->
-        <div class="container-bartenders">
-            <div class="bartender-wrapp">
-                <i id="profile" class="fas fa-user-circle"></i>
-                <h3>Bartenders:
-                    <strong class="bartender_name">name</strong>
-                </h3>
-                <div class="line-black"></div>
-                <span class="profile-detail">
-                    <i id="status" class="fas fa-user-times"></i> Working Status:
-                    <strong class="bartender_status"></strong>
-                </span>
-                <span class="profile-detail">
-                    <i id="detail" class="far fa-clock"></i> Working Details:
-                    <strong class="bartender_status_detail"></strong>
-                </span>
+            <div>
+                <span>Details Info:</span>
+                <strong class="bartender_activity"></strong>
             </div>
+        </template>
+
+
+        <div class="box box5">
+            <span>Bartender</span>
+            <span>1</span>
         </div>
-
-        <!--Bartenders Section-->
-        <div class="container-bartenders">
-            <div class="bartender-wrapp">
-                <i id="profile" class="fas fa-user-circle"></i>
-                <h3>Bartenders:
-                    <strong class="bartender_name">name</strong>
-                </h3>
-                <div class="line-black"></div>
-                <span class="profile-detail">
-                    <i id="status" class="fas fa-user-times"></i> Working Status:
-                    <strong class="bartender_status"></strong>
-                </span>
-                <span class="profile-detail">
-                    <i id="detail" class="far fa-clock"></i> Working Details:
-                    <strong class="bartender_status_detail"></strong>
-                </span>
-            </div>
+        <div class="box box6">
+            <span>Bartender</span>
+            <span>1</span>
         </div>
-
-
+        <div class="box box7">
+            <span>Bartender</span>
+            <span>1</span>
         </div>
-
-
-        <div class="empty-container">7</div>
-        <div class="empty-container">8</div>
-        <div class="empty-container">10</div>
-        <div class="empty-container">11</div>
-        <div class="empty-container">12</div>
+        <div class="box box8">
+            <span>Bartender</span>
+            <span>1</span>
+        </div>
+        <div class="box box9">
+            <span>Bartender</span>
+            <span>1</span>
+        </div>
+        <div class="box box10">
+            <span>Bartender</span>
+            <span>1</span>
+        </div>
     </main>
-
-
 
     <script src="http://petlatkea.dk/2018/front/foobar.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 
 </html>
