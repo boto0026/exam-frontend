@@ -1,0 +1,127 @@
+/*Colors*/
+body {
+  color: #333;
+  background: #e5e5e5;
+  margin: 0 auto; }
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(1fr, 100px);
+  grid-gap: 1em;
+  margin: 5vw 5vw 0 5vw; }
+
+.container-foobar,
+.container-beertap,
+.container-queue,
+.container-people-served,
+.container-beers-served,
+.container-bartenders,
+.empty-container {
+  padding: 2em;
+  border-radius: 0.5em;
+  color: #333;
+  box-shadow: 0 10px 8px -8px #999; }
+
+.container-foobar {
+  color: white;
+  background: linear-gradient(45deg, #ee0979 0%, #ff6a00 100%); }
+
+.container-queue,
+.container-people-served,
+.container-beers-served,
+.container-bartenders,
+.empty-container {
+  color: #333;
+  background: white; }
+
+.container-foobar,
+.bartender-wrapp {
+  display: flex;
+  flex-direction: column; }
+
+.bartender-wrapp {
+  align-items: center; }
+
+.profile-detail {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0; }
+
+.line-white, .line-black {
+  width: 100%;
+  height: 1px;
+  margin: 0 0 1em 0; }
+
+.line-white {
+  background: white;
+  opacity: 0.5; }
+
+.line-black {
+  background: #333;
+  opacity: 0.2; }
+
+@media (min-width: 34em) {
+  main {
+    grid-template-columns: repeat(4, 1fr); }
+  .container-foobar,
+  .container-beertap {
+    grid-row: span 2; }
+  .container-beertap {
+    grid-column: span 2; }
+  .container-bartenders {
+    grid-row: span 2; }
+  .container-bartenders {
+    grid-column: span 1; } }
+
+body {
+  font-weight: 300;
+  letter-spacing: .04rem;
+  line-height: 1;
+  font-family: 'Helvetica', sans-serif; }
+
+h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0; }
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 2.0rem;
+  display: inline-block;
+  font-weight: 300;
+  line-height: 1;
+  padding: 0;
+  margin: 0; }
+
+span {
+  margin: 0.5em 0 0.5em 0;
+  font-weight: 300; }
+
+span i {
+  margin: 0 0.2em 0 0; }
+
+span strong {
+  color: #333;
+  font-weight: 300; }
+
+a {
+  color: red; }
+
+p {
+  font-size: 0.875em;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 2em 0 2em; }
+
+.bartender-wrapp #profile {
+  font-size: 5em;
+  color: #ff6a00; }
+
+.bartender-wrapp #status, .bartender-wrapp #detail {
+  font-size: 1.5em;
+  color: #ff6a00;
+  margin: 0.5em; }
