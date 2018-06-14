@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton|PT+Serif" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
         crossorigin="anonymous">
 </head>
@@ -33,16 +32,19 @@
             </span>
         </div>
 
-        <!-- Beer taps -->
+        <!-- Beer Storage Section -->
         <div class="box box2">
-            <span>Beer Taps</span>
-            <span>1</span>
+            <div class="barcontainer">
+                <canvas id="BeerStorageChart"></canvas>
+            </div>
         </div>
+        <template class="storage-temp">
+        </template>
 
         <!--Data for the queue and Serving-->
         <!-- Queue and Serving section with the chart -->
         <div class="box box3">
-            <canvas id="myChart"></canvas>
+            <canvas id="queueChart"></canvas>
         </div>
 
         <!-- Bartenders working -->
@@ -57,7 +59,6 @@
                     </span>
                     <strong class="bartender_name"></strong>
                 </div>
-                <div class="bartender-graphic"></div>
                 <div>
                     <span>Status:</span>
                     <strong class="bartender_status"></strong>
