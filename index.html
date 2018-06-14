@@ -36,6 +36,13 @@
         <!-- Queue and Serving section with the chart -->
         <div class="box box3">
             <canvas id="queueChart"></canvas>
+            <div class="center-wrapp">
+                <div class="sold-number-icon">
+                    <i class="icon fas fa-beer beerIcon"></i>
+                </div>
+                <strong class="sold-number"></strong>
+                <span>Beers sold today</span>
+            </div>
         </div>
 
         <!-- Bartenders working -->
@@ -46,7 +53,7 @@
             <div class="box box4-column1">
                 <i class="icon fas fa-user-alt"><span>Bartender's name:</span><strong class="bartender_name"></strong></i>
                 <i class="icon fas fa-beer"><span>Status:</span><strong class="bartender_status label"></strong></i>
-                <i class="icon fas fa-comment"><span>Activity:</span><strong class="bartender_activity"></strong></i>
+                <i class="icon fas fa-comment"><span>Details:</span><strong class="bartender_activity"></strong></i>
             </div>
         </template>
 
@@ -62,7 +69,6 @@
                 <i class="icon fas fa-tint"><span>Alcohol:</span><strong class="alcvalue"></strong></i>
             </div>
         </template>
-
 
     <script src="http://petlatkea.dk/2018/front/foobar.js"></script>
     <script src="js/Chart.js"></script>
