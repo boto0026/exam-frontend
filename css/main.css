@@ -22,6 +22,17 @@ main {
 #queueChart, #BeerStorageChart {
   pointer-events: none; }
 
+.image-wrapp {
+  display: grid;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 1em 0 2em 0; }
+
+.beergraphic {
+  width: 12vw; }
+
 .wrapp {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -39,7 +50,7 @@ main {
   background-color: white; }
 
 .box1 {
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
   grid-row: 1 / 3;
   display: flex;
   align-self: end;
@@ -48,7 +59,7 @@ main {
   background: linear-gradient(45deg, #ee0979 0%, #ff6a00 100%); }
 
 .box2 {
-  grid-column: 3 / 9;
+  grid-column: 4 / 9;
   grid-row: 1 / 3;
   display: grid;
   align-content: center; }
@@ -59,31 +70,28 @@ main {
   display: grid;
   align-content: center; }
 
-.box4, .box5 {
+.box4 {
   grid-column: 1 / -1;
   display: grid;
   position: relative;
   grid-gap: 1em;
   grid-template-columns: repeat(3, 1fr); }
-  .box4 .box4-column1, .box4 .box5-column1, .box5 .box4-column1, .box5 .box5-column1 {
+  .box4 .box4-column1 {
     display: grid;
     grid-column: repeat(2, 1fr);
     grid-template-rows: minmax(60px, auto); }
 
-.box6 {
-  grid-column: 9 / -1; }
-
-.box7 {
-  grid-column: span 3; }
-
-.box8 {
-  grid-column: span 3; }
-
-.box9 {
-  grid-column: span 3; }
-
-.box10 {
-  grid-column: span 3; }
+.box5, .box6 {
+  grid-column: 1 / -1;
+  display: grid;
+  position: relative;
+  grid-gap: 1em;
+  grid-template-columns: repeat(5, 1fr); }
+  .box5 .box5-column1, .box6 .box5-column1 {
+    display: grid;
+    grid-column: repeat(2, 1fr);
+    grid-template-rows: minmax(60px, auto);
+    cursor: pointer; }
 
 h1 {
   font-family: 'PT Serif', serif;
@@ -101,11 +109,8 @@ h2 {
   padding: 0;
   margin: 0; }
 
-a {
-  color: red; }
-
 p {
-  font-size: 0.875em;
+  font-size: 0.938em;
   font-weight: 300;
   line-height: 1.5;
   margin: 2em 0 2em; }
@@ -123,5 +128,7 @@ span {
 strong {
   margin-left: 0.5em;
   padding: 0.5em 01em 0.5em 0.9em;
-  border-radius: 0.5em;
+  border-radius: 0.5em; }
+
+.box4 .label {
   color: white; }

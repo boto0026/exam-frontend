@@ -66,7 +66,8 @@ function loadScript() {
             legend: {
                 labels: {
                     fontColor: '#333',
-                    fontFamily: 'Helvetica'
+                    fontFamily: 'Helvetica',
+                    fontSize: 15,
                 }
 
             }
@@ -114,7 +115,7 @@ function loadScript() {
                             autoSkip: false,
                             beginAtZero: true,
                             fontColor: '#333',
-                            fontSize: 14
+                            fontSize: 14,
                         },
                         display: true,
                         responsive: true,
@@ -124,8 +125,7 @@ function loadScript() {
                         ticks: {
                             beginAtZero: true,
                             fontColor: '#333',
-                            fontSize: 14,
-                            // mirror: true
+                            fontSize: 12,
 
                         },
                         display: true,
@@ -152,7 +152,8 @@ function loadScript() {
 
     let beersTemplate = document.querySelector(".beers-temp").content;
     // console.log(beersTemplate);
-    document.querySelector(".beerinfo").textContent = "";
+    document.querySelector(".beerinfo").textContent = '';
+
 
     myObject.taps.forEach((tap) => {
         // console.log(myObject.taps);
@@ -168,10 +169,11 @@ function loadScript() {
 
             if (tap.beer == beertype.name) {
                 clone.querySelector(".alcvalue").textContent = ` ${beertype.alc + "%"}`;
+                clone.querySelector(".beergraphic").src = "labelimage/" + beertype.label;
             }
 
         });
-        
+
         document.querySelector(".beerinfo").appendChild(clone);
 
     });
