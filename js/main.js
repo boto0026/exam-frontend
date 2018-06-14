@@ -7,7 +7,7 @@ let nameArray = [];
 
 window.addEventListener("DOMContentLoaded", loadScript);
 
-//getting the data from the script
+//Getting the data
 function loadScript() {
     let data = FooBar.getData();
     myObject = JSON.parse(data);
@@ -25,7 +25,7 @@ function loadScript() {
     //04 Call Bartender's Function
     showBartenders();
 
-    // 05 Data for the queue
+    //05 Data for the queue - serving
     //data queue
     let queue = myObject.queue.length;
     //data serving
@@ -74,7 +74,7 @@ function loadScript() {
 
     });
 
-    //06 Beer Storage Section
+    //06 Beers Storage Section
     let BeerStorage = document.querySelector(".storage-temp").content;
 
     //Creating Array to use the data
@@ -96,7 +96,7 @@ function loadScript() {
             data: {
                 labels: nameArray,
                 datasets: [{
-                    label: "Beer Storage",
+                    label: "Beer's Storage",
                     data: storageArray,
                     borderColor: GradientBg,
                     pointHoverBorderWidth: 1,
@@ -144,27 +144,39 @@ function loadScript() {
 
         });
 
-
     });
-
-
-
-
-
-
-
-
-
 
     //07 Getting a number of beers served in total
 
+    //08 Beers info section
+
+    let beersTemplate = document.querySelector(".beers-temp").content;
+    // console.log(beersTemplate);
+    document.querySelector(".beerinfo").textContent = "";
+
+    myObject.taps.forEach((tap) => {
+        // console.log(myObject.taps);
+
+        let clone = beersTemplate.cloneNode(true);
+        clone.querySelector(".beername").textContent = tap.beer;
+
+        //Perc value
+        let levperc = (tap.level / tap.capacity) * 100;
+        clone.querySelector(".levvalue").textContent = ` ${levperc}`;
+        // Alc Value
+        myObject.beertypes.forEach((beertype) => {
+
+            if (tap.beer == beertype.name) {
+                clone.querySelector(".alcvalue").textContent = ` ${beertype.alc + "%"}`;
+            }
+
+        });
+        
+        document.querySelector(".beerinfo").appendChild(clone);
+
+    });
 
 };
-
-
-
-
-
 
 
 
@@ -179,14 +191,14 @@ function showBartenders() {
     bartenders.forEach(bartender => {
         //console.log("bartender", bartender.name);
 
-        //define the bartenders template
+        //Define the bartenders template
         let bartendersTemplate = document.querySelector(".bartendersTemplate").content;
 
-        //define the bartenders clone 
+        //Define the bartenders clone 
         let bartendersClone = bartendersTemplate.cloneNode(true);
-        //getting the names of the bartenders
+        //Getting the names of the bartenders
         bartendersClone.querySelector(".bartender_name").textContent = ` ${bartender.name}`;
-        //bartender´s status of work
+        //Bartender´s status of work
         if (bartender.status == "WORKING") {
             bartendersClone.querySelector(".bartender_status").textContent = " Working";
             bartendersClone.querySelector(".bartender_status").style.backgroundColor = "#28a745";
@@ -195,7 +207,7 @@ function showBartenders() {
             bartendersClone.querySelector(".bartender_status").style.backgroundColor = "#ff6a00";
         }
 
-        //bartender´s precise activity
+        //Bartender´s Activity
         if (bartender.statusDetail == "pourBeer") {
             bartendersClone.querySelector(".bartender_activity").textContent = ` Pours Beer`;
         } else if (bartender.statusDetail == "startServing") {
@@ -210,7 +222,7 @@ function showBartenders() {
             bartendersClone.querySelector(".bartender_activity").textContent = ` Is waiting`;
         }
 
-        //append clone in the div .bartenders
+        //Append clone in the div
         document.querySelector(".box4").appendChild(bartendersClone);
     })
 
