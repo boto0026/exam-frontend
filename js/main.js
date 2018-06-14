@@ -1,7 +1,6 @@
 "use strict";
 
 let myObject;
-//const tapsTemplate = document.querySelector("#tapsTemplate").content;
 
 
 window.addEventListener("DOMContentLoaded", loadScript);
@@ -16,19 +15,66 @@ function loadScript() {
     //02 Closing Time
     document.querySelector(".closing-time").textContent = ` ${myObject.bar.closingTime.slice(0, -3)}`;
     //03 Current Time
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
+    let now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
     document.querySelector(".current-time").textContent = ` ` + hours + ":" + minutes;
 
     //04 Call Bartender's Function
     showBartenders();
 
-    //05 Number of people served
+    // 05 Data for the queue
+    //data queue
+    let queue = myObject.queue.length;
+    //data serving
+    let serving = myObject.serving.length;
+    let ChartCanva = document.getElementById("myChart");
+    //creating a chart with chart.js
+    let myChart = new Chart(ChartCanva, {
+        type: 'doughnut',
+        data: {
+            labels: ["Standing in the queue: " + myObject.queue.length, "Being served: " + myObject.serving.length],
+            datasets: [{
+                data: [queue, serving],
+                backgroundColor: [
+                    '#ff6a00',
+                    '#28a745',
+                ],
+                borderColor: [
+                    'transparent',
+                    'transparent'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            animation: {
+                easing: 'easeInCirc'
+            },
+            responsive: true,
+            scales: {
+                xAxes: [{
+                    display: false
+                }],
+                yAxes: [{
+                    display: false
+                }]
 
-    //06 Getting a number of beers served in total
+            },
+            legend: {
+                labels: {
+                    fontColor: '#333',
+                    fontFamily: 'Helvetica'
+                }
 
-    //07 Getting a number of people served now
+            }
+        }
+
+    });
+
+    //06 Number of people served
+
+    //07 Getting a number of beers served in total
 
 
 };
@@ -55,10 +101,10 @@ function showBartenders() {
         //bartender´s status of work
         if (bartender.status == "WORKING") {
             bartendersClone.querySelector(".bartender_status").textContent = " Working";
-            bartendersClone.querySelector(".bartender_status").style.backgroundColor = "green";
+            bartendersClone.querySelector(".bartender_status").style.backgroundColor = "#28a745";
         } else {
             bartendersClone.querySelector(".bartender_status").textContent = " Getting Ready";
-            bartendersClone.querySelector(".bartender_status").style.backgroundColor = "orange";
+            bartendersClone.querySelector(".bartender_status").style.backgroundColor = "#ff6a00";
         }
 
         //bartender´s precise activity
