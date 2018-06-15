@@ -17,19 +17,22 @@ function loadScript() {
 
     //02 Project Name and Opening Hours
     document.querySelector(".project-name").textContent = `Welcome to ${myObject.bar.name}`;
+
     //03 Closing Time
     document.querySelector(".closing-time").textContent = ` ${myObject.bar.closingTime.slice(0, -3)}`;
+
     //04 Current Time
     let now = new Date();
     let hours = now.getHours();
     let minutes = now.getMinutes();
     document.querySelector(".current-time").textContent = ` ` + hours + ":" + minutes;
 
+
     //05 Call Bartender's Function
     showBartenders();
 
-    //07 Data for the queue - serving
-    //data queue
+
+    //06 Data for the queue - serving
     let queue = myObject.queue.length;
     //data serving
     let serving = myObject.serving.length;
@@ -78,7 +81,18 @@ function loadScript() {
 
     });
 
-    //08 Beers Storage Section
+    //07 Getting a number of beers served in total
+    myObject.serving.forEach(customer => {
+        if (customer.id > lastIdCount) {
+            beersServed += customer.order.length;
+            lastIdCount = customer.id;
+        }
+        // console.log(beersServed);
+    });
+    document.querySelector(".sold-number").textContent = beersServed;
+
+
+    //08 Kegs Storage Section
     let BeerStorage = document.querySelector(".storage-temp").content;
 
     //Creating Array to use the data
@@ -100,7 +114,7 @@ function loadScript() {
             data: {
                 labels: nameArray,
                 datasets: [{
-                    label: "Beer's Storage",
+                    label: "Kegs in Storage",
                     data: storageArray,
                     borderColor: GradientBg,
                     pointHoverBorderWidth: 1,
@@ -149,23 +163,11 @@ function loadScript() {
 
     });
 
-    //09 Getting a number of beers served in total
-    myObject.serving.forEach(customer => {
-        if (customer.id > lastIdCount) {
-            beersServed += customer.order.length;
-            lastIdCount = customer.id;
-        }
-        // console.log(beersServed);
-    });
-
-    document.querySelector(".sold-number").textContent = beersServed;
-
 
     //10 Beers info section
     let beersTemplate = document.querySelector(".beers-temp").content;
     // console.log(beersTemplate);
     document.querySelector(".beerinfo").textContent = '';
-
 
     myObject.taps.forEach((tap) => {
         // console.log(myObject.taps);
@@ -195,7 +197,6 @@ function loadScript() {
 
 //05 Bartenders name-status-status detail
 function showBartenders() {
-    //console.log("bartenders", myObject.bartenders);
     //clean the container of bartenders
     document.querySelector(".box4").innerHTML = "";
 
@@ -244,4 +245,4 @@ function showBartenders() {
 //setting the interval so the date reloads in 10s !!!IMPORTANT to change the time to 10 s before handin
 setInterval(function () {
     loadScript();
-}, 3000);
+}, 10000);
