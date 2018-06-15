@@ -149,7 +149,7 @@ function loadScript() {
 
     });
 
-    //09 getting a number of beers served in total
+    //09 Getting a number of beers served in total
     myObject.serving.forEach(customer => {
         if (customer.id > lastIdCount) {
             beersServed += customer.order.length;
