@@ -15,7 +15,7 @@ function loadScript() {
     let data = FooBar.getData();
     myObject = JSON.parse(data);
 
-    //02 Project Name and Opening Hours
+    //02 Project Name
     document.querySelector(".project-name").textContent = `Welcome to ${myObject.bar.name}`;
 
     //03 Closing Time
