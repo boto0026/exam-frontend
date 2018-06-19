@@ -7,72 +7,71 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FooBar Dashboard</title>
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,500i,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Anton|PT+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
         crossorigin="anonymous">
 </head>
+  <body>
+    <div class="container">
 
-<body>
+      <!--Time and Project name-->
+      <div class="wrap">
+        <img class="fooIcon" src="img/icon.svg" alt="Logo">
+        <img class="logo" src="img/logo.svg" alt="Logo">
+        <h1 class="project-name">Project Name</h1>
+        <div class="line"></div>
+        <i class="far fa-clock"> <span>The Bar is:</span> <strong class="opening-status"></strong></i>
+        <i class="fas fa-clock"> <span class="indication">Closing at:</span> <strong class="closing-status"></strong></i>
+      </div>
 
-    <main class="wrapp">
-
-        <!-- Project name - Closing Time - Current Time -->
-        <div class="box box1">
-            <h1 class="project-name">Project Name</h1>
-            <div class="line"></div>
-            <i class="far fa-clock"><span>Closing Time:</span><strong class="closing-time"></strong></i>
-            <i class="fas fa-clock"><span>Current Time:</span><strong class="current-time"></strong></i>
-        </div>
-
-        <!-- Beer Storage Section -->
-        <div class="box box2">
-            <canvas id="BeerStorageChart"></canvas>
-        </div>
+      <!--Kegs Storage-->
+      <div class="wrap">
+        <canvas id="BeerStorageChart"></canvas>
         <template class="storage-temp"></template>
+      </div>
 
-        <!--Data for the queue and Serving-->
-        <!-- Queue and Serving section with the chart -->
-        <div class="box box3">
-            <canvas id="queueChart"></canvas>
-            <div class="center-wrapp">
-                <div class="sold-number-icon">
-                    <i class="icon fas fa-beer beerIcon"></i>
-                </div>
-                <strong class="sold-number"></strong>
-                <span>Beers sold today</span>
+      <!--Beers Sold Today - People statind in the queue - People Being Served-->
+      <div class="wrap">
+        <h3>Beers sold today</h3>
+        <div class="number"><img src="img/beer-icon.svg" alt="beerIcon"></div>
+        <strong class="sold-number">number</strong>
+        <div class="lineblack"></div>
+        <canvas id="queueChart"></canvas>
+      </div>
+
+      <!--Bartenders-->
+      <div class="bartender-container"></div>
+      <!--Bartenders Template Holder-->
+      <template class="bartendersTemplate">
+          <div class="bartender-wrap">
+            <div id="peter" class="profile-picture"><img src="img/peter.svg" alt="bartender"></div>
+            <div id="jonas" class="profile-picture"><img src="img/jonas.svg" alt="bartender"></div>
+            <div id="martin" class="profile-picture"><img src="img/martin.svg" alt="bartender"></div>
+            <div class="bartender-info">
+              <i class="icon fas fa-user-alt"> <span>Bartender's name:</span> <strong class="bartender_name"></strong></i>
+              <i class="icon fas fa-beer"> <span>Status:</span> <strong class="bartender_status"></strong></i>
+              <i class="icon fas fa-comment"> <span>Details:</span> <strong class="bartender_activity"></strong></i>
             </div>
+          </div>
+      </template>
+
+      <!-- Beers Info Section -->
+      <!-- Template Holder -->
+      <div class="beers-container"></div>
+      <!-- Template -->
+      <template class="beersTemplate">
+        <div class="beers-wrap">
+          <h4 class="beername"></h4>
+            <div class="image-wrapp"><img src="" class="beergraphic"></div>
+            <i class="icon fas fa-ruler-vertical"> <span>Level:</span><strong class="levvalue"></strong></i>
+            <i class="icon fas fa-tint"> <span>Alcohol:</span><strong class="alcvalue"></strong></i>
         </div>
-
-        <!-- Bartenders working -->
-        <!-- Template Holder -->
-        <div class="box4"></div>
-        <!-- Template -->
-        <template class="bartendersTemplate">
-            <div class="box box4-column1">
-                <i class="icon fas fa-user-alt"><span>Bartender's name:</span><strong class="bartender_name"></strong></i>
-                <i class="icon fas fa-beer"><span>Status:</span><strong class="bartender_status label"></strong></i>
-                <i class="icon fas fa-comment"><span>Details:</span><strong class="bartender_activity"></strong></i>
-            </div>
-        </template>
-
-        <!-- Beers Info Section -->
-        <!-- Template Holder -->
-        <div class="box5 beerinfo"></div>
-        <!-- Template -->
-        <template class="beers-temp">
-            <div class="box box5-column1">
-                <h4 class="beername"></h4>
-                <div class="image-wrapp"><img src="" class="beergraphic"></div>
-                <i class="icon fas fa-ruler-vertical"><span>Level:</span><strong class="levvalue"></strong></i>
-                <i class="icon fas fa-tint"><span>Alcohol:</span><strong class="alcvalue"></strong></i>
-            </div>
-        </template>
-
-    <script src="http://petlatkea.dk/2018/front/foobar.js"></script>
-    <script src="js/Chart.js"></script>
-    <script src="js/main.js"></script>
-</body>
-
+      </template>
+      
+    </div>
+  <!-- <script src="http://petlatkea.dk/2018/front/foobar.js"></script> -->
+  <script src="js/Chart.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  </body>
 </html>
