@@ -1,174 +1,162 @@
-body {
-  color: #333;
-  background: #e5e5e5;
-  margin: 0 auto;
-  font-weight: 300;
-  letter-spacing: .04rem;
-  line-height: 1;
-  font-family: 'Helvetica', sans-serif; }
+body, html {
+  margin: 1vw 0; }
 
-main {
-  min-width: 1200px;
-  max-width: 1680px; }
+body {
+  background-color: #e5e5e5;
+  color: white; }
+
+.logo {
+  width: 6em; }
+
+h1 {
+  font-size: calc(1.5rem + ((1vw - 3.2px) * 1.0294));
+  line-height: 1.2em; }
 
 .line {
   width: 100%;
   height: 1px;
-  margin: 1em 0 1em 0;
-  opacity: 0.5;
-  background-color: white; }
+  background: white;
+  opacity: 0.75;
+  margin-bottom: 1em; }
+
+.lineblack {
+  width: 50%;
+  height: 1px;
+  background: #333;
+  opacity: 0.75;
+  margin: 1em auto; }
+
+.fooIcon {
+  position: absolute;
+  right: 0px;
+  top: 3em; }
+
+.container {
+  width: 90vw;
+  max-width: 1680vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: block;
+  grid-gap: 1em;
+  min-width: 1200px;
+  max-width: 1680px; }
 
 #queueChart, #BeerStorageChart {
   pointer-events: none; }
 
-.image-wrapp {
-  display: grid;
-  justify-self: center;
+#queueChart {
+  margin-bottom: 2em; }
+
+.number {
+  display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100%;
+  width: 92px;
+  height: 92px;
+  background: linear-gradient(45deg, #ee0979 0%, #ff6a00 100%);
+  border-radius: 100%; }
+
+#peter, #jonas, #martin {
+  display: none; }
+
+.image-wrapp {
+  display: flex;
+  justify-content: center;
   margin: 1em 0 2em 0; }
 
 .beergraphic {
-  width: 12vw; }
+  width: 12vw;
+  height: 12vw; }
 
-.center-wrapp {
+.wrap {
+  grid-column: span 3;
   display: flex;
-  align-items: center;
-  color: #28a745;
-  margin: 1em 0 1em 0; }
+  position: relative;
+  flex-direction: column;
+  padding: 2em;
+  border-radius: 0.3em;
+  box-shadow: 0 10px 8px -8px #999;
+  background: white; }
 
-.sold-number-icon {
+.wrap:nth-child(1) {
+  align-self: end;
+  background: linear-gradient(45deg, #ee0979 0%, #ff6a00 100%);
+  color: white; }
+
+.wrap:nth-child(2) {
+  display: flex;
+  justify-content: center; }
+
+.wrap:nth-child(3) {
+  display: flex;
+  align-items: center; }
+
+.bartender-container, .beers-container {
+  grid-column: span 3; }
+
+.bartender-wrap, .beers-wrap {
+  margin-top: 1em;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 2em;
+  border-radius: 0.3em;
+  box-shadow: 0 10px 8px -8px #999;
+  background: white; }
+
+.profile-picture {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 4em;
-  height: 4em;
-  border-radius: 100%;
-  background: linear-gradient(45deg, #ee0979 0%, #ff6a00 100%); }
+  margin: 1em; }
 
-.beerIcon, .sold-number {
-  font-size: 2em;
-  color: #ff6a00;
-  margin: 0;
-  padding: 0; }
-
-.sold-number {
-  margin: 0 0 0 0.5em; }
-
-.beerIcon {
-  color: white;
-  padding-left: 0.15em; }
-
-.wrapp {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: minmax(200px, auto);
-  justify-items: stretch;
-  align-items: stretch;
-  grid-gap: 1em;
-  margin: 1.5vw 5vw 0 5vw; }
-
-.box {
-  padding: 1.5em;
-  border-radius: 0.5em;
-  color: #333;
-  box-shadow: 0 10px 8px -8px #999;
-  background-color: white; }
-
-.box1 {
-  grid-column: 1 / 3;
-  grid-row: 1 / 3;
+.bartender-info {
   display: flex;
-  align-self: end;
-  flex-direction: column;
-  color: white;
-  background: linear-gradient(45deg, #ee0979 0%, #ff6a00 100%); }
+  flex-direction: column; }
 
-.box2 {
-  grid-column: 3 / 9;
-  grid-row: 1 / 3;
-  display: grid;
-  align-content: center; }
-
-.box3 {
-  grid-column: 9 / -1;
-  grid-row: 1 / 3;
-  display: grid;
-  align-content: center; }
-
-.box4 {
-  grid-column: 1 / -1;
-  display: grid;
-  position: relative;
-  grid-gap: 1em;
-  grid-template-columns: repeat(3, 1fr); }
-  .box4 .box4-column1 {
+@media screen and (min-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(12, 1fr); }
+  .wrap:nth-child(2) {
+    grid-column: span 5; }
+  .wrap:nth-child(3) {
+    grid-column: span 4; }
+  .bartender-container {
+    grid-column: span 12;
+    display: grid;
+    position: relative;
+    grid-gap: 1em;
+    grid-template-columns: repeat(3, 1fr); }
+  .bartender-wrap {
     display: grid;
     grid-column: repeat(2, 1fr);
     grid-template-rows: minmax(60px, auto); }
+  .beers-container {
+    grid-column: span 12;
+    display: grid;
+    position: relative;
+    grid-gap: 1em;
+    grid-template-columns: repeat(5, 1fr); }
+  .beers-wrap {
+    position: relative;
+    transition-timing-function: ease-in;
+    transition: 0.2s;
+    cursor: pointer; }
+  .beers-wrap:hover {
+    background-color: #f2f2f2;
+    transform: translateY(3%); } }
 
-.box5, .box6 {
-  grid-column: 1 / -1;
-  display: grid;
-  position: relative;
-  grid-gap: 1em;
-  grid-template-columns: repeat(5, 1fr); }
-
-.box5-column1 {
-  display: grid;
-  grid-column: repeat(2, 1fr);
-  grid-template-rows: minmax(60px, auto); }
-
-.box5-column1 {
-  position: relative;
-  transition-timing-function: ease-in;
-  transition: 0.2s;
-  cursor: pointer; }
-
-.box5-column1:hover {
-  background-color: #f2f2f2;
-  transform: translateY(3%); }
-
-h1 {
-  font-family: 'PT Serif', serif;
-  font-size: 2rem;
-  font-weight: 400;
-  margin: 0 0 0.5em; }
-
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 400;
-  font-size: 2.0rem;
-  display: inline-block;
-  font-weight: 300;
-  line-height: 1;
-  padding: 0;
-  margin: 0; }
-
-a {
-  text-decoration: none; }
-
-p {
-  font-size: 0.938em;
-  font-weight: 300;
-  line-height: 1.5;
-  margin: 2em 0 2em; }
-
-i, span, strong {
-  font-family: Helvetica, sans-serif;
-  font-size: 0.938em;
+body {
   color: #333;
-  line-height: 1.5em; }
+  font-size: 1em;
+  line-height: 25.888px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal; }
 
 span {
-  font-weight: normal;
-  margin-left: 0.5em; }
+  font-weight: normal; }
 
-strong {
-  margin-left: 0.5em;
-  padding: 0.5em 01em 0.5em 0.9em;
-  border-radius: 0.5em; }
-
-.box4 .label {
-  color: white; }
+span, strong {
+  display: inline;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  letter-spacing: 0.045em;
+  line-height: 32.36px; }
